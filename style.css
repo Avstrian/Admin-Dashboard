@@ -1,33 +1,43 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('./assets/Roboto-Light.ttf');
+}
+
 body, html {
     margin: 0px;
     padding: 0px;
     height: 100%;
+    font-family: 'Roboto';
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1.2fr 5fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 6fr;
     height: 100vh;
     width: 100vw;
 }
 
 .header {
-    background-color: red;
+    background-color: white;
     grid-column: 2 / 3;
     display: grid;
-    gap: 15px;
-    padding: 5px;
+    box-shadow: 1px 1px 10px 1px black;
 }
 
 .header div {
-    background-color: wheat;
+    background-color: white;
 }
 
 .search-bar {
     grid-row: 1 / 2;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
     justify-content: left;
     padding-left: 40px;
@@ -36,6 +46,9 @@ body, html {
 .search-bar input {
     height: 30px;
     width: 40vw;
+    border-radius: 20px;
+    background-color: lightgray;
+    border: none;
 }
 
 .user-long {
@@ -77,14 +90,14 @@ body, html {
     padding: 15px 30px;
     border-radius: 50px;
     border: none;
-    background-color: blue;
+    background-color: #1099FF;
     color: white;
     font-weight: bolder;
     font-size: 1rem;
 }
 
 .sidebar {
-    background-color: blue;
+    background-color: #1099FF;
     grid-row: 1 / 6;
     display: grid;
     grid-template-rows: 1.5fr 5fr 3fr;
@@ -94,13 +107,20 @@ body, html {
 }
 
 .main {
-    background-color: yellow;
+    background-color: #EFEFEF;
     grid-row: 2 / 6;
 }
 
 .logo, .pages, .settings {
-    background-color: gray;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
 }
 
 .pages {
@@ -114,22 +134,20 @@ body, html {
 }
 
 .page {
-    background-color: wheat;
     margin: 5px;
+    text-align: left;
+    display: flex;
+    gap: 20px;
+    justify-content: left;
 }
 
 h1 {
     font-size: 2rem;
 }
 
-.projects, .announcements, .trending {
-    background-color: gray;
-}
-
 .main {
     display: grid;
-    grid-template-columns: 2.5fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2.7fr 1fr;
     gap: 10px;
     padding: 10px;
 }
@@ -140,21 +158,28 @@ h1 {
 }
 
 .projects h2 {
-    padding-left: 9px;
+    padding-left: 10px;
 }
 
 .project-container {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 20px;
     padding: 0px 10px;
 }
 
 .project {
-    background-color: beige;
-    height: 17vh;
+    background-color: white;
+    border-radius: 10px;
+    border-left: solid #FFDD11 8px;
+    height: 20vh;
     padding: 10px;
+}
+
+.project p {
+    font-family: 'Roboto-Light';
+    padding-left: 10px;
 }
 
 .project-icons {
@@ -165,6 +190,16 @@ h1 {
     gap: 30px;
 }
 
+.announcements {
+    grid-row: 1 / 2;
+}
+
+.announcement-container, .trending-container, .project {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px 2px lightgray;
+}
+
 .announcement-container {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
@@ -172,8 +207,11 @@ h1 {
 }
 
 .announcement {
-    background-color: wheat;
-    padding: 0 30px;
+    padding: 0px 10px;
+}
+
+.announcement p, .trending-user p {
+    font-family: 'Roboto-Light';
 }
 
 hr {
@@ -182,6 +220,10 @@ hr {
     background-color: lightgray;
     border-radius: 200px;
     border: none;
+}
+
+.trendings {
+    grid-row: 2 / 3;
 }
 
 .trending {
